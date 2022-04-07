@@ -1,0 +1,38 @@
+.searchbar {
+    grid-column: 2;
+    grid-row: 1;
+    background-color: rgb(0, 0, 0);
+    border-bottom: 1px solid grey;
+}
+.search {
+    grid-column: 5;
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+
+  .search-term {
+    width: 100%;
+    border: 2px solid orange;
+    padding: 10px;
+    height: 35px;
+    border-radius: 4px 0 0 4px;
+    color: #000000;
+    
+  }
+
+  .search-button {
+    width: 40px;
+    height: 35px;
+    border: 1px solid orange;
+    background: orange;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+
+  .wrap {
+    padding-top: 10px;
+    text-align: center;
+  }
