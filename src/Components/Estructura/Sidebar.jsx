@@ -22,7 +22,6 @@ class Sidebar extends React.Component {
                 >
                   <Link
                     to={item.link}
-                    style={{ color: 'inherit', textDecoration: 'inherit'}}
                     className="sidebar-link"> 
                       <div id="icono">{item.icon}</div>
                       <div id="titulo">{item.title}</div>

@@ -1,7 +1,4 @@
-import React, { Component } from 'react'
-import { Container, Nav, NavDropdown, Navbar, Form, FormControl, Button } from 'react-bootstrap';
-import { SidebarData } from '../../Data/SidebarData';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
 import "./SearchBar.css";
 import { Icon } from "react-icons-kit";
 import { ic_arrow_back, ic_search } from "react-icons-kit/md";

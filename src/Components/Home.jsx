@@ -19,6 +19,9 @@ export function Home() {
       <div className='item'>
         Home
       </div>
+      <div className='item'>
+        Home
+      </div>
     </div>
   )
 }

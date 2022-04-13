@@ -22,6 +22,7 @@
   color: white;
   justify-content: center;
   align-items: center;
+  font-family: sans-serif;
   text-decoration:none;
 }
 
@@ -29,6 +30,13 @@
   cursor: pointer;
   background-color: orange;
   color: black;
+  text-decoration:none;
+  
+}
+
+.sidebar-link:hover {
+  color: inherit;
+  text-decoration: none;
 }
 
 .elementosLista #icono {
