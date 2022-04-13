@@ -39,13 +39,16 @@
   text-decoration: none;
 }
 
-.elementosLista #icono {
+.sidebar-link #icono {
   flex: 40%;
   display: grid;
   place-items: center;
 }
 
-.elementosLista #titulo {
+.sidebar-link #titulo {
   flex: 70%;
 }
 
+#active {
+  background-color: orange;
+}
