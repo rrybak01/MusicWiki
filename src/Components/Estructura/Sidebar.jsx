@@ -1,5 +1,4 @@
 import React from "react";
-import { Nav, NavLink} from 'react-bootstrap';
 import './Sidebar.css';
 import { SidebarData } from '../../Data/SidebarData';
 import { Link } from 'react-router-dom';
@@ -14,7 +13,7 @@ class Sidebar extends React.Component {
           <div className="Sidebar-header">
             MusicWiki
           </div>
-          <Nav>
+          <div>
             {SidebarData.map((item) => {
               return (
                 <li 
@@ -31,7 +30,7 @@ class Sidebar extends React.Component {
                 </li>
               );
             })}
-          </Nav>
+          </div>
         </ul>
       </div>
     )
