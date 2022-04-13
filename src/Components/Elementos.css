@@ -12,6 +12,7 @@
     margin-top: 30px;
     width: 200px;
     height: 200px;
-    background-color: aqua;
+    background-color: orange;
     justify-content: center;
+    align-items: center;
 }
