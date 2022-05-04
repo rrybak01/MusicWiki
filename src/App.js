@@ -1,21 +1,21 @@
 import './App.css';
-import Sidebar  from './Components/Estructura/Sidebar';
-import SearchBar  from './Components/Estructura/SearchBar';
-import { SidebarData } from './Data/SidebarData';
+import Sidebar  from './Components/Sidebar';
+import { SidebarData } from './Components/Data/SidebarData';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
 import uuid from "react-uuid";
+import SearchBar from './Components/SearchBar';
 
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Sidebar />
         <SearchBar />
+        <Sidebar />
         <Switch>
           
           {SidebarData.map( (item) => {

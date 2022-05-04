@@ -1,28 +1,43 @@
 import React from 'react';
-import "./Elementos.css";
+import uuid from 'react-uuid';
+import './Elementos.css';
+import StandarCard from "./StandardCard/StdCard";
 
-export function Home() {
-  return (
-    <div className='contenedor'>
-      <div className='item'>
-        Home
+class Home extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      tableData: [],
+    }
+  }
+
+  async componentDidMount() {
+    const response = await fetch(
+      'https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/playlists'
+    );
+
+    const responseData = await response.json();
+
+    this.setState({
+      tableData: responseData.data,
+    });
+      
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+      <div className="contenedor">
+        {this.state.tableData.map((item) => (
+          <StandarCard
+            pic={item.picture_big}
+            key={uuid()}
+          />
+        ))}
       </div>
-      <div className='item'>
-        Home
-      </div>
-      <div className='item'>
-        Home
-      </div>
-      <div className='item'>
-        Home
-      </div>
-      <div className='item'>
-        Home
-      </div>
-      <div className='item'>
-        Home
-      </div>
-    </div>
-  )
+    </React.Fragment>
+    );
+  }
 }
 
+export default Home;

@@ -5,7 +5,7 @@ import './Elementos.css';
 import axios from "axios";
 import StandarCard from "./StandardCard/StdCard";
 
-class Canciones extends React.Component {
+class Radio extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -14,16 +14,9 @@ class Canciones extends React.Component {
   }
 
   async componentDidMount() {
-    var myHeaders = new Headers();
-
-    var requestOptions = {
-      method: 'GET',
-      redirect: 'follow',
-    };
     
     const response = await fetch(
-      'https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks',
-      requestOptions
+      'https://cors-anywhere.herokuapp.com/https://api.deezer.com/radio'
     );
 
     const responseData = await response.json();
@@ -37,18 +30,18 @@ class Canciones extends React.Component {
   render() {
     return (
       <React.Fragment>
-      <div className="contenedor">
-        {this.state.tableData.map((item) => (
-          <StandarCard
-            text={item.title_short}
-            pic={item.album.cover_big}
-            key={uuid()}
-          />
-        ))}
-      </div>
-    </React.Fragment>
+        <div className="contenedor">
+          {this.state.tableData.map((item) => (
+            <StandarCard
+              text={item.title}
+              pic={item.picture_big}
+              key={uuid()}
+            />
+          ))}
+        </div>
+      </React.Fragment>
     );
   }
 }
 
-export default Canciones;
+export default Radio;

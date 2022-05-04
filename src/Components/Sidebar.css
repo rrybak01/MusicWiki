@@ -1,0 +1,47 @@
+.Sidebar {
+    grid-column: 1;
+    grid-row: 1/3;
+    height: 100%;
+    width: 250px;
+    background-color: rgb(0, 0, 0);
+}
+
+.Sidebar-header {
+    border-bottom: 0.5px inset grey;
+    align-items:center;
+}
+
+.lista {
+    height: 60px;
+    padding: 0;
+    width: 100%;
+
+}
+
+.lista .elementosLista, .Sidebar-header , .sidebar-link{
+    width: 100%;
+    height: 60px;
+    list-style-type: none;
+    margin: 0%;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-decoration:none;
+}
+
+.elementosLista .active{
+    content: "";
+	border-left: 3px solid #1db954;
+	position: relative;
+}
+
+
+.elementosLista #icon{
+    flex: 30%;
+}
+
+.elementosLista #title{
+    flex: 70%;
+}

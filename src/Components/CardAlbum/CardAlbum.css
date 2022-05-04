@@ -1,0 +1,36 @@
+.album {
+    width: 250px;
+    height: 300px;
+    margin: 15px 20px;
+    margin-top: 60px;
+    margin-left: 50px;
+    transition: transform 0.2s ease-out;
+}
+
+.album:hover {
+    cursor: pointer;
+    transform: translate(5px, -10px);
+}
+
+.album .card-album {
+    width: 250px;
+    height: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.album .card-album img {
+    width: 100%;
+    height: auto;
+}
+
+.album .Album-Title {
+    color: white;
+    font-size: 0.8rem;
+    margin: 0;
+    white-space: nowrap;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 700;
+}
