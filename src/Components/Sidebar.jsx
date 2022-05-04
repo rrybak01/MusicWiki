@@ -22,7 +22,8 @@ class Sidebar extends React.Component {
                             <NavLink
                                 to={item.link}
                                 className="sidebar-link"
-                                activeClassName="active"> 
+                                activeClassName="active"
+                                exact={item.defaultRoute}> 
                                 <div id="titulo">{item.title}</div>
                             </NavLink>
                         </li>
