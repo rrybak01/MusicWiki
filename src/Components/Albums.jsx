@@ -1,8 +1,6 @@
 import React from 'react';
 import uuid from 'react-uuid';
-import { Card, Container, Table, Row, Col } from 'react-bootstrap';
 import './Elementos.css';
-import axios from "axios";
 import CardAlbum from "./CardAlbum/CardAlbum";
 
 class Albums extends React.Component {

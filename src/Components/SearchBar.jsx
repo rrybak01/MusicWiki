@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import "./SearchBar.css";
 import { Icon } from "react-icons-kit";
-import { ic_arrow_back, ic_search } from "react-icons-kit/md";
+import { ic_search } from "react-icons-kit/md";
 
 export class SearchBar extends Component {
   

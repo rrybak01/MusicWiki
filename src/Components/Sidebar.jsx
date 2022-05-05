@@ -1,7 +1,7 @@
 import React from "react";
 import "./Sidebar.css";
 import {SidebarData} from "./Data/SidebarData";
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import uuid from "react-uuid";
 
 class Sidebar extends React.Component {

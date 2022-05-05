@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import uuid from "react-uuid";
 import SearchBar from './Components/SearchBar';
+import CargarPlaylist from "./Components/CargarPlaylist";
 
 
 function App() {
@@ -21,7 +22,6 @@ function App() {
           {SidebarData.map( (item) => {
               return (<Route path={item.link} key={uuid()} exact={item.defaultRoute}>{item.component}</Route>);
           })}
-        
         </Switch>
       </div>
     </Router>

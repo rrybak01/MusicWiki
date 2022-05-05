@@ -2,13 +2,23 @@ import React from 'react';
 import uuid from 'react-uuid';
 import './Elementos.css';
 import StandarCard from "./StandardCard/StdCard";
+import CargarPlaylist from "./CargarPlaylist";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
+import { Container, Form, Button, Row, Col, FloatingLabel } from 'react-bootstrap';
 
 class Home extends React.Component {
   constructor() {
     super();
     this.state = {
+      selectedItem: '',
       tableData: [],
-    }
+    };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   async componentDidMount() {
@@ -20,8 +30,13 @@ class Home extends React.Component {
 
     this.setState({
       tableData: responseData.data,
+      selectedItem: responseData.data,
     });
       
+  }
+
+  handleClick(e){
+    console.log("Funciona");
   }
 
   render() {
@@ -31,8 +46,13 @@ class Home extends React.Component {
         {this.state.tableData.map((item) => (
           <StandarCard
             pic={item.picture_big}
+            url={"/playlist"}
             key={uuid()}
-          />
+          >
+          <Switch>
+            <Route path="/playlist" component={CargarPlaylist}></Route>
+          </Switch>
+          </StandarCard>
         ))}
       </div>
     </React.Fragment>

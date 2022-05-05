@@ -2,12 +2,12 @@ import React from "react";
 import "./StdCard.css";
 import { Link } from "react-router-dom";
 
-const CardGenres = ({ text, pic }) => {
+const CardGenres = ({ text, pic, url }) => {
   return (
-      <div className="contenedorTarjeta">
+      <Link className="contenedorTarjeta" to={url}>
         <img src={pic} alt={text} />
         <div className="name-genre-center">{text}</div>
-      </div>
+      </Link>
     
   );
 };
