@@ -1,9 +1,9 @@
-import Home from '../Home';
-import Artistas from '../Artistas';
-import Canciones from '../Canciones';
-import Albums from '../Albums';
-import Radio from '../Radio';
-import Perfil from '../Perfil';
+import Home from '../Elementos/Home';
+import Artistas from '../Elementos/Artistas';
+import Canciones from '../Elementos/Canciones';
+import Albums from '../Elementos/Albums';
+import Radio from '../Elementos/Radio';
+import Login from '../Login';
 
 export const SidebarData = [
     {
@@ -51,7 +51,7 @@ export const SidebarData = [
         link: '/perfil',
         defaultRoute: false,
         title: 'Perfil',
-        component: <Perfil />
+        component: <Login />
         
       },
 ]

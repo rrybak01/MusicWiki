@@ -1,15 +1,10 @@
 import React from 'react';
 import uuid from 'react-uuid';
 import './Elementos.css';
-import StandarCard from "./StandardCard/StdCard";
+import StandarCard from "../StandardCard/StdCard";
 import CargarPlaylist from "./CargarPlaylist";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
-} from "react-router-dom";
-import { Container, Form, Button, Row, Col, FloatingLabel } from 'react-bootstrap';
+import { Link } from "react-router-dom";
+import { Card } from "react-bootstrap";
 
 class Home extends React.Component {
   constructor() {
@@ -18,7 +13,6 @@ class Home extends React.Component {
       selectedItem: '',
       tableData: [],
     };
-    this.handleClick = this.handleClick.bind(this);
   }
 
   async componentDidMount() {
@@ -35,27 +29,20 @@ class Home extends React.Component {
       
   }
 
-  handleClick(e){
-    console.log("Funciona");
+  handleClick() {
+    <Link to="playlist" component={CargarPlaylist}/>
   }
 
   render() {
     return (
-      <React.Fragment>
       <div className="contenedor">
         {this.state.tableData.map((item) => (
-          <StandarCard
-            pic={item.picture_big}
-            url={"/playlist"}
-            key={uuid()}
-          >
-          <Switch>
-            <Route path="/playlist" component={CargarPlaylist}></Route>
-          </Switch>
-          </StandarCard>
+          <Card key={uuid()} className="contenedorTarjeta" onClick={this.handleClick}>
+            <Link to="playlist" component={CargarPlaylist}/>
+            <img src={item.picture_big} alt={item.title} />
+          </Card>
         ))}
       </div>
-    </React.Fragment>
     );
   }
 }

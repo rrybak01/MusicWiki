@@ -33,7 +33,7 @@
 
 .elementosLista .active{
     content: "";
-	border-left: 3px solid #1db954;
+	border-left: 3px solid #01d28e;
 	position: relative;
 }
 

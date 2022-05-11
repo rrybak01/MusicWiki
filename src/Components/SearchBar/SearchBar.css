@@ -10,9 +10,9 @@
 
   .search-term {
     width: 350px;
-    border: 2px solid #1db954;
+    border: 2px solid #01d28e;
     height: 35px;
-    border-radius: 8px 0 0 8px;
+    border-radius: 5px 0 0 5px;
     color: #000000;
     background-color: rgb(255, 255, 255);
   }
@@ -20,11 +20,11 @@
   .botonBuscar {
     width: 40px;
     height: 35px;
-    border: 1px solid #1db954;
-    background: #1db954;
+    border: 1px solid #01d28e;
+    background: #01d28e;
     text-align: center;
     color: #fff;
-    border-radius: 0 8px 8px 0;
+    border-radius: 0 5px 5px 0;
     cursor: pointer;
   }
 

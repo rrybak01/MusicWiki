@@ -1,9 +1,9 @@
 import React from 'react';
 import uuid from 'react-uuid';
 import './Elementos.css';
-import StandarCard from "./StandardCard/StdCard";
+import CardAlbum from "../CardAlbum/CardAlbum";
 
-class Artistas extends React.Component {
+class Albums extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -20,7 +20,7 @@ class Artistas extends React.Component {
     };
     
     const response = await fetch(
-      'https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/artists',
+      'https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/albums',
       requestOptions
     );
 
@@ -37,9 +37,8 @@ class Artistas extends React.Component {
       <React.Fragment>
       <div className="contenedor">
         {this.state.tableData.map((item) => (
-          <StandarCard
-            text={item.name}
-            pic={item.picture_big}
+          <CardAlbum
+            album={item}
             key={uuid()}
           />
         ))}
@@ -49,4 +48,6 @@ class Artistas extends React.Component {
   }
 }
 
-export default Artistas;
+export default Albums;
+
+

@@ -1,0 +1,59 @@
+div {
+  color: white;
+}
+.input-container input {
+  height: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.loginButton{
+  padding: 5px;
+  cursor: pointer;
+  background: #01d28e;
+  border: 1px solid #01d28e;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+}
+
+.loginButton:hover {
+  background: #6cf0c2;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  background: #000000;
+  padding: 10%;
+  border-radius: 5px;
+}
+
+.list-container {
+  display: flex;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}

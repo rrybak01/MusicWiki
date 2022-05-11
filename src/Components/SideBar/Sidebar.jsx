@@ -1,6 +1,6 @@
 import React from "react";
 import "./Sidebar.css";
-import {SidebarData} from "./Data/SidebarData";
+import {SidebarData} from "../Data/SidebarData";
 import { NavLink } from 'react-router-dom';
 import uuid from "react-uuid";
 

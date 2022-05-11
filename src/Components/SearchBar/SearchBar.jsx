@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import "./SearchBar.css";
 import { Icon } from "react-icons-kit";
 import { ic_search } from "react-icons-kit/md";

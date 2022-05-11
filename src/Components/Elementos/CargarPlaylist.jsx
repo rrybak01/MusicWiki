@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import "./Elementos.css";
 
 export class CargarPlaylist extends Component {
   render() {
     return (
-      <div>CargarPlaylist</div>
+      <div className='contenedor'>CargarPlaylist</div>
     )
   }
 }

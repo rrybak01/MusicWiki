@@ -1,7 +1,7 @@
 import React from 'react';
 import uuid from 'react-uuid';
 import './Elementos.css';
-import StandarCard from "./StandardCard/StdCard";
+import StandarCard from "../StandardCard/StdCard";
 
 class Radio extends React.Component {
   constructor() {

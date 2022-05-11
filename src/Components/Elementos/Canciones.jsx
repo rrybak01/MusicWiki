@@ -1,7 +1,7 @@
 import React from 'react';
 import uuid from 'react-uuid';
 import './Elementos.css';
-import StandarCard from "./StandardCard/StdCard";
+import StandarCard from "../StandardCard/StdCard";
 
 class Canciones extends React.Component {
   constructor() {
@@ -40,6 +40,7 @@ class Canciones extends React.Component {
           <StandarCard
             text={item.title_short}
             pic={item.album.cover_big}
+            url={"/playlist"}
             key={uuid()}
           />
         ))}
