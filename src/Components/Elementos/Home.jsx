@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import uuid from 'react-uuid';
 import './Elementos.css';
 import StandarCard from "../StandardCard/StdCard";
@@ -6,45 +6,32 @@ import CargarPlaylist from "./CargarPlaylist";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 
-class Home extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      selectedItem: '',
-      tableData: [],
-    };
+export default function Home(props) {
+  
+  const [data, setData] = useState([])
+
+  const fetchMyAPI = async () => {
+    let response = await fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/playlists')
+    response = await response.json()
+    setData(response.data)
   }
 
-  async componentDidMount() {
-    const response = await fetch(
-      'https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/playlists'
-    );
+  useEffect(() => {
+    fetchMyAPI()
+  }, [fetchMyAPI])
 
-    const responseData = await response.json();
-
-    this.setState({
-      tableData: responseData.data,
-      selectedItem: responseData.data,
-    });
-      
-  }
-
-  handleClick() {
-    <Link to="playlist" component={CargarPlaylist}/>
-  }
-
-  render() {
+  
     return (
       <div className="contenedor">
-        {this.state.tableData.map((item) => (
-          <Card key={uuid()} className="contenedorTarjeta" onClick={this.handleClick}>
+        {data.map((item) => (
+          <Card key={uuid()} className="contenedorTarjeta" >
             <Link to="playlist" component={CargarPlaylist}/>
             <img src={item.picture_big} alt={item.title} />
           </Card>
         ))}
       </div>
     );
-  }
+  
 }
 
-export default Home;
+
