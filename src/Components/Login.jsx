@@ -1,77 +1,48 @@
-import React, { useState } from 'react';
-import './Login.css';
-import Home from "./Elementos/Home";
-import { Link } from "react-router-dom";
+import React, { useRef } from 'react';
+import Boton from './Boton';
+import { Container,Form } from 'react-bootstrap'
+import { useHistory } from "react-router-dom";
+import { Users } from "./Data/Users";
 
-function Login() {
-
-  const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const renderErrorMessage = (name) =>
-    name === errorMessages.name && (
-    <div className="error">{errorMessages.message}</div>
-  );
-
-  const handleSubmit = (e) => {
-    //Prevent page reload
-    e.preventDefault();
+export default function Login(){
   
-    var { uname, pass } = document.forms[0];
-  
-    // Find user login info
-    const userData = database.find((user) => user.username === uname.value);
-  
-    // Compare user info
-    if (userData) {
-      if (userData.password !== pass.value) {
-        // Invalid password
-        setErrorMessages({ name: "pass", message: errors.pass });
-      } else {
-        setIsSubmitted(true);
-      }
-    } else {
-      // Username not found
-      setErrorMessages({ name: "uname", message: errors.uname });
+  const history = useHistory();
+  const nameInput = useRef();
+  const pwdInput = useRef();
+
+  const logUser = () => {
+
+    const user = Users.find(item => item.name === nameInput.current.value && item.password === pwdInput.current.value);
+
+    if (user !== undefined) {
+      localStorage.setItem('loggedUser', user.name);
+      history.push("/radio");
     }
-  };
-  
-  const database = [
-    {
-      username: "admin",
-      password: "admin"
-    },
-    
-  ];
-  
-  const errors = {
-    uname: "invalid username",
-    pass: "invalid password"
-  };
-  
-  const renderForm = (
-    <div className="form">
-      <form onSubmit={handleSubmit}>
-        <div className="title"><h2>Iniciar sesión</h2></div>
-        <div className="input-container">
-          <input type="text" placeholder="Usuario" name="uname" required />
-          {renderErrorMessage("uname")}
-        </div>
-        <div className="input-container">
-          <input type="password" placeholder="Contraseña" name="pass" required />
-          {renderErrorMessage("pass")}
-        </div>
-        <div className="button-container">
-            <button className='loginButton'>Continuar</button>
-        </div>
-      </form>
-    </div>
-  );
+  }
 
- return (
-    <div className="login-form">
-      {isSubmitted ? <Link to="/home" component={Home} /> : renderForm}
-    </div>
+  return (
+    <>
+      <Container>
+        <h1>Inicio de sesión - Test App</h1>
+        <Form>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Nombre de usuario</Form.Label>
+            <Form.Control ref={nameInput} type="text" placeholder="Usuario" />
+            <Form.Text className="text-muted">
+              Su email no será compartido con nadie
+            </Form.Text>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Contraseña</Form.Label>
+            <Form.Control ref={pwdInput} type="password" placeholder="Contraseña" />
+            </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Check type="checkbox" label="Mantén la sesión iniciada" />
+          </Form.Group>
+          <Boton text="Login" onClickButton={logUser} />
+        </Form>
+      </Container>
+    </>
   );
-  
-};export default Login;
+}
+

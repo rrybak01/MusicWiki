@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import CargarPlaylist from "../Elementos/CargarPlaylist";
 import { Card } from "react-bootstrap";
 
-const CardGenres = ({ text, pic, url }) => {
+const CardGenres = ({ text, pic, /*url*/ }) => {
   let history = useHistory();
 
   function handleClick() {
