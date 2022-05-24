@@ -8,17 +8,20 @@ import { Card } from "react-bootstrap";
 
 export default function Home(props) {
   
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
+  const playlists= "playlists";
+  const URL=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/${playlists}`;
+  
 
   const fetchMyAPI = async () => {
-    let response = await fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/playlists')
+    let response = await fetch(URL)
     response = await response.json()
     setData(response.data)
   }
 
   useEffect(() => {
     fetchMyAPI()
-  }, [fetchMyAPI])
+  }, [])
 
   
     return (

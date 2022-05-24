@@ -3,7 +3,9 @@ import Artistas from '../Elementos/Artistas';
 import Canciones from '../Elementos/Canciones';
 import Albums from '../Elementos/Albums';
 import Radio from '../Elementos/Radio';
+import Busqueda from '../Elementos/Busqueda';
 import Login from '../Login';
+import SearchBar from "../SearchBar/SearchBar";
 
 export const SidebarData = [
     {
@@ -44,6 +46,14 @@ export const SidebarData = [
         defaultRoute: false,
         title: 'Albums',
         component: <Albums />
+        
+      },
+      {
+        
+        link: '/buscar',
+        defaultRoute: false,
+        title: 'Buscar',
+        component: <SearchBar />
         
       },
       {

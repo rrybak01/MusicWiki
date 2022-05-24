@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Icon } from "react-icons-kit";
 import { ic_search } from "react-icons-kit/md";
-import "../Elementos/Elementos.css";
-import "./SearchBar.css";
+import "./Elementos.css";
+import "../SearchBar/SearchBar.css";
 import { Card } from "react-bootstrap";
 import uuid from 'react-uuid';
 
