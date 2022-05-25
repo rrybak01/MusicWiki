@@ -10,7 +10,7 @@ export default class Busqueda extends React.Component{
 
     constructor(props){
         super(props);
-        this.URL = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/`;
+        this.URL = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=eminem`;
         this.state = {
             data: [],
         };
@@ -20,7 +20,8 @@ export default class Busqueda extends React.Component{
     }
     
     async componentDidMount() {
-        const response = await fetch(this.URL)
+        const response = await fetch(this.URL + "search?q=eminem")
+        console.log(this.URL)
         response = await response.json()
         this.setState({
             data: response.data,
@@ -29,7 +30,6 @@ export default class Busqueda extends React.Component{
 
     updateTable = async () => {
         this.updateTableAPI('search?q=' + this.search);
-        console.log(this.URL);
     };
     
     updateTableAPI = async (endpointURL) => {
@@ -41,9 +41,10 @@ export default class Busqueda extends React.Component{
     };
 
     render() {
+        
         return(
             <div className="contenedorSearchbar">
-            
+                
                 <div className="searchbar">
                     <input
                     type="text"
