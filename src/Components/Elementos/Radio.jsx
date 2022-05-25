@@ -2,14 +2,26 @@ import React from 'react';
 import uuid from 'react-uuid';
 import './Elementos.css';
 import StandarCard from "../StandardCard/StdCard";
+import CardInfo from "../InfoCard/InfoCard";
 
 class Radio extends React.Component {
   constructor() {
     super();
     this.state = {
+      selectedItem: '',
       tableData: [],
     }
+    this.changeSelected = this.changeSelected.bind(this);
+    this.URL="https://cors-anywhere.herokuapp.com/https://api.deezer.com/radio";
   }
+
+  changeSelected = async (itemEndpoint) => {
+    const response = await fetch(this.URL + itemEndpoint);
+    const responseData = await response.json();
+    this.setState({
+      selectedItem: responseData.data,
+    });
+  };
 
   async componentDidMount() {
     
@@ -34,9 +46,11 @@ class Radio extends React.Component {
               text={item.title}
               pic={item.picture_big}
               key={uuid()}
+              onClick={() => this.changeSelected(item.title)}
             />
           ))}
         </div>
+        <CardInfo title={this.state.selectedItem}/>
       </React.Fragment>
     );
   }

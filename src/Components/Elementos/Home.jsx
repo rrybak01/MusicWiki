@@ -6,7 +6,7 @@ import CargarPlaylist from "./CargarPlaylist";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 
-export default function Home(props) {
+export default function Home() {
   
   const [data, setData] = useState([]);
   const playlists= "playlists";

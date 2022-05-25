@@ -6,12 +6,11 @@ import uuid from "react-uuid";
 import SearchBar from './Components/SearchBar/SearchBar';
 import CargarPlaylist from "./Components/Elementos/CargarPlaylist";
 
-
 function App() {
   return (
       <div className="App">
         
-    <Router>
+        <Router>
         <Sidebar />
         <Switch>
           
