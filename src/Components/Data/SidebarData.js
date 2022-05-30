@@ -9,18 +9,10 @@ import SearchBar from "../SearchBar/SearchBar";
 export const SidebarData = [
     {
     
-        link: '/MusicWiki/',
+        link: '/',
         defaultRoute: true,
         title: 'Home',
         component: <Home />,
-        
-      },
-      {
-    
-        link: '/MusicWiki/radio',
-        defaultRoute: false,
-        title: 'Radio',
-        component: <Radio />,
         
       },
     {

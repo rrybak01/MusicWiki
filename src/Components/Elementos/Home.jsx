@@ -4,11 +4,13 @@ import './Elementos.css';
 import StandarCard from "../StandardCard/StdCard";
 import CargarPlaylist from "./CargarPlaylist";
 import { Link } from "react-router-dom";
-import { Card } from "react-bootstrap";
+import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import InfoCard from "../InfoCard/InfoCard";
 
 export default function Home() {
   
   const [data, setData] = useState([]);
+  const [selectedItem, setSelectedItem] = useState("");
   const playlists= "playlists";
   const URL=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/${playlists}`;
   
