@@ -5,39 +5,41 @@ import "../Elementos/Elementos.css";
 import "./SearchBar.css";
 import { Card } from "react-bootstrap";
 import uuid from 'react-uuid';
+import { BASE_API_URL, API_URL_SEARCH } from "../Data/Constants";
 
 export default class Busqueda extends React.Component{
 
     constructor(props){
         super(props);
-        this.URL = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=eminem`;
         this.state = {
+            selectedItem: '',
             data: [],
+            search: "",
         };
-        this.search = React.createRef();
         this.updateTable = this.updateTable.bind(this);
         this.updateTableAPI = this.updateTableAPI.bind(this);
     }
     
     async componentDidMount() {
-        const response = await fetch(this.URL + "search?q=eminem")
-        console.log(this.URL)
-        response = await response.json()
+        const response = await fetch(API_URL_SEARCH);
+        const responseData = await response.json();
         this.setState({
-            data: response.data,
-        })
+          data: responseData.data,
+          selectedItem: responseData.data[1],
+        });
     }
 
     updateTable = async () => {
-        this.updateTableAPI('search?q=' + this.search);
+        this.updateTableAPI('search?q=' + this.state.search);
     };
     
     updateTableAPI = async (endpointURL) => {
-        const response = await fetch(this.URL + endpointURL);
-        response = await response.json();
+        const response = await fetch(BASE_API_URL + endpointURL);
+        const responseData = await response.json();
         this.setState({
-            data: response.data,
-        })
+          data: responseData.data,
+          selectedItem: responseData.data[1],
+        });
     };
 
     render() {
@@ -48,22 +50,28 @@ export default class Busqueda extends React.Component{
                 <div className="searchbar">
                     <input
                     type="text"
-                    reference={this.search}
                     className="search-term"
                     placeholder="Buscar"
+                    onChange={(event) => this.setState({search: event.target.value})}
                     />
-                    <button type="submit" className="botonBuscar">
-                    <Icon onClick={this.updateTable} className="search-icon" icon={ic_search} />
+                    <button type="submit" className="botonBuscar" onClick={this.updateTable}>
+                    <Icon className="search-icon" icon={ic_search} />
                     </button>
                 
                 </div>
 
                 <div className="contenedor">
-                {this.state.data.map((item) => (
-                <Card key={uuid()} className="contenedorTarjeta" >
-                    <img src={item.album.cover_big} alt={item.title} />
-                </Card>
-                ))}
+                    {this.state.data.map((item) => {
+                        return (
+                            <Card
+                                className="contenedorTarjeta"
+                                key={uuid()}
+                                >
+                                <img src={item.album.cover_big} alt={item.title}></img>
+                                <div className="name-genre-center">{item.title}</div>
+                            </Card>
+                        );
+                    })}
                 </div>
             </div>
         )
