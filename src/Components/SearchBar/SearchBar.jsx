@@ -3,7 +3,7 @@ import { Icon } from "react-icons-kit";
 import { ic_search } from "react-icons-kit/md";
 import "../Elementos/Elementos.css";
 import "./SearchBar.css";
-import { Card } from "react-bootstrap";
+import { Card } from 'react-bootstrap';
 import uuid from 'react-uuid';
 import { BASE_API_URL, API_URL_SEARCH } from "../Data/Constants";
 

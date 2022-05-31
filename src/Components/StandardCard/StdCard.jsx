@@ -1,15 +1,32 @@
 import React from "react";
 import "./StdCard.css";
-import { Card } from "react-bootstrap";
+import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
-const CardGenres = ({ text, pic, /*url*/ }) => {
-  
-  return (
-    <Card className="contenedorTarjeta">
-        <img src={pic} alt={text} />
-        <div className="name-genre-center">{text}</div>
-    </Card>
-  );
-};
+class StandarCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.text = props.text;
+    this.onClickCard = props.onClickCard;
+    this.pic = props.pic;
+  }
 
-export default CardGenres;
+  render() {
+    return (
+      <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={this.pic} />
+        <Card.Body>
+          <Card.Title>
+            {this.text}
+          </Card.Title>
+        </Card.Body>
+        <ListGroup className="list-group-flush">
+          <ListGroupItem>
+            <button text="boton" onClick={this.onClickCard} />
+          </ListGroupItem>
+        </ListGroup>
+      </Card>
+    );
+  }
+}
+
+export default StandarCard;

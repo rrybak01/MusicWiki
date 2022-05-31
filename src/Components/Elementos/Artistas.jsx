@@ -3,7 +3,7 @@ import uuid from 'react-uuid';
 import './Elementos.css';
 import StandarCard from "../StandardCard/StdCard";
 import { API_URL_ARTISTAS, BASE_API_URL } from '../Data/Constants';
-import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import InfoCard from "../InfoCard/InfoCard";
 
 class Artistas extends React.Component {

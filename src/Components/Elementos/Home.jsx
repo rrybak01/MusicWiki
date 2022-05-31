@@ -30,7 +30,6 @@ export default function Home() {
       <div className="contenedor">
         {data.map((item) => (
           <Card key={uuid()} className="contenedorTarjeta" >
-            <Link to="playlist" component={CargarPlaylist}/>
             <img src={item.picture_big} alt={item.title} />
           </Card>
         ))}
