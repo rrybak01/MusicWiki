@@ -40,6 +40,12 @@ export default class Busqueda extends React.Component{
         });
     };
 
+    SoundPlay = (src) => {
+        const sound = new Audio(src);
+    
+        sound.play();
+      }
+
     render() {
         
         return(
@@ -64,9 +70,10 @@ export default class Busqueda extends React.Component{
                             <div
                                 className="tarjetatt"
                                 key={uuid()}
+                                onClick={() => {this.SoundPlay(item.preview);}}
                                 >
                                 <img src={item.album.cover_big} alt={item.title} className="imagenTarjeta"></img>
-            <p className="tituloTarjeta">{item.title}</p>
+                                <p className="tituloTarjeta">{item.title}</p>
                             </div>
                         );
                     })}

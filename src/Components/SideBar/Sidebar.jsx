@@ -32,3 +32,4 @@ export default function Sidebar() {
           );
 }
 
+/*onClick={()=>{window.location.pathname = item.link}}*/
