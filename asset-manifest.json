@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/MusicWiki/static/css/main.5eebd5fb.css",
-    "main.js": "/MusicWiki/static/js/main.c2e41d36.js",
+    "main.js": "/MusicWiki/static/js/main.b6b4f888.js",
     "index.html": "/MusicWiki/index.html",
     "main.5eebd5fb.css.map": "/MusicWiki/static/css/main.5eebd5fb.css.map",
-    "main.c2e41d36.js.map": "/MusicWiki/static/js/main.c2e41d36.js.map"
+    "main.b6b4f888.js.map": "/MusicWiki/static/js/main.b6b4f888.js.map"
   },
   "entrypoints": [
     "static/css/main.5eebd5fb.css",
-    "static/js/main.c2e41d36.js"
+    "static/js/main.b6b4f888.js"
   ]
 }
