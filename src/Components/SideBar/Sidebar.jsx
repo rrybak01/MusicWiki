@@ -1,7 +1,7 @@
 import React from "react";
 import "./Sidebar.css";
 import {SidebarData} from "../Data/SidebarData";
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import uuid from "react-uuid";
 
 class Sidebar extends React.Component {
@@ -19,13 +19,11 @@ class Sidebar extends React.Component {
                         <li key={uuid()}
                         className="elementosLista"
                         onClick={()=>{window.location.pathname = item.link}}>
-                            <NavLink
+                            <Link
                                 to={item.link}
-                                className="sidebar-link"
-                                activeClassName="active"
-                                exact={item.defaultRoute}> 
+                                className="sidebar-link"> 
                                 <div id="titulo">{item.title}</div>
-                            </NavLink>
+                            </Link>
                         </li>
                     )
                     })}
