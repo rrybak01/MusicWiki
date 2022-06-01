@@ -1,7 +1,6 @@
 import React from 'react';
 import uuid from 'react-uuid';
 import './Elementos.css';
-import StandarCard from "../StandardCard/StdCard";
 import InfoCard from "../InfoCard/InfoCard";
 import { API_URL_RADIO } from '../Data/Constants';
 import { Container, Table, Row, Col } from 'react-bootstrap';

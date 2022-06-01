@@ -1,7 +1,6 @@
 import React from 'react';
 import uuid from 'react-uuid';
 import './Elementos.css';
-import StandarCard from "../StandardCard/StdCard";
 import { API_URL_ARTISTAS, BASE_API_URL } from '../Data/Constants';
 import { Card } from 'react-bootstrap';
 import InfoCard from "../InfoCard/InfoCard";
@@ -39,14 +38,14 @@ class Artistas extends React.Component {
       <div className="contenedor">
         {this.state.tableData.map((item) => {
           return (
-            <Card
-              className="contenedorTarjeta"
+            <div
+              className="tarjetatt"
               key={uuid()}
               onClick={() => this.changeSelected(item.type+"/"+item.id)}
             >
-              <img src={item.picture_big} alt={item.name}></img>
-              <div className="name-genre-center">{item.name}</div>
-            </Card>
+              <img src={item.picture_big} alt={item.name} className="imagenTarjeta"></img>
+              <p className="tituloTarjeta">{item.name}</p>
+            </div>
           );
         })}
 

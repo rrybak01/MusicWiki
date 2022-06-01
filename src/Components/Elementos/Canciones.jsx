@@ -44,14 +44,14 @@ class Artistas extends React.Component {
       <div className="contenedor">
         {this.state.tableData.map((item) => {
           return (
-            <Card
-              className="contenedorTarjeta"
+            <div
+              className="tarjetatt"
               key={uuid()}
               onClick={() => {this.SoundPlay(item.preview);}}
             >
-              <img src={item.album.cover_big} alt={item.title}></img>
-              <div className="name-genre-center">{item.title}</div>
-            </Card>
+              <img src={item.album.cover_big} alt={item.title} className="imagenTarjeta"></img>
+              <p className="tituloTarjeta">{item.title}</p>
+            </div>
           );
         })}
 

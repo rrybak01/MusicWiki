@@ -1,4 +1,4 @@
-.album {
+.tarjetatt {
     width: 250px;
     height: 300px;
     margin: 15px 20px;
@@ -7,24 +7,24 @@
     transition: transform 0.2s ease-out;
 }
 
-.album:hover {
+.tarjetatt:hover {
     cursor: pointer;
     transform: translate(5px, -10px);
 }
 
-.album .card-album {
+.tarjetatt .imagenTarjeta {
     width: 250px;
     height: 250px;
     border-radius: 8px;
     overflow: hidden;
 }
 
-.album .card-album img {
+.tarjetatt .imagenTarjeta img {
     width: 100%;
     height: auto;
 }
 
-.album .Album-Title {
+.tarjetatt .tituloTarjeta {
     color: white;
     font-size: 0.8rem;
     margin: 0;

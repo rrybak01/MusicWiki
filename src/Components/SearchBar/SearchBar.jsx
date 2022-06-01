@@ -1,9 +1,7 @@
 import React from 'react';
 import { Icon } from "react-icons-kit";
 import { ic_search } from "react-icons-kit/md";
-import "../Elementos/Elementos.css";
 import "./SearchBar.css";
-import { Card } from 'react-bootstrap';
 import uuid from 'react-uuid';
 import { BASE_API_URL, API_URL_SEARCH } from "../Data/Constants";
 
@@ -63,13 +61,13 @@ export default class Busqueda extends React.Component{
                 <div className="contenedor">
                     {this.state.data.map((item) => {
                         return (
-                            <Card
-                                className="contenedorTarjeta"
+                            <div
+                                className="tarjetatt"
                                 key={uuid()}
                                 >
-                                <img src={item.album.cover_big} alt={item.title}></img>
-                                <div className="name-genre-center">{item.title}</div>
-                            </Card>
+                                <img src={item.album.cover_big} alt={item.title} className="imagenTarjeta"></img>
+            <p className="tituloTarjeta">{item.title}</p>
+                            </div>
                         );
                     })}
                 </div>

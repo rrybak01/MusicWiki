@@ -1,11 +1,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import uuid from 'react-uuid';
 import './Elementos.css';
-import StandarCard from "../StandardCard/StdCard";
-import CargarPlaylist from "./CargarPlaylist";
 import { Link } from "react-router-dom";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
-import InfoCard from "../InfoCard/InfoCard";
 
 export default function Home() {
   
@@ -29,9 +26,10 @@ export default function Home() {
     return (
       <div className="contenedor">
         {data.map((item) => (
-          <Card key={uuid()} className="contenedorTarjeta" >
-            <img src={item.picture_big} alt={item.title} />
-          </Card>
+          <div key={uuid()} className="tarjetatt" >
+            <img src={item.picture_big} alt={item.title} className="imagenTarjeta" />
+            <p className="tituloTarjeta">{item.title}</p>
+          </div>
         ))}
       </div>
     );
