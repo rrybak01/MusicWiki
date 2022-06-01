@@ -34,7 +34,7 @@ export default function Login(){
             <Form.Control className="input" ref={pwdInput} type="password" placeholder="Contraseña" />
             </Form.Group>
           <div className="button-container">
-              <button onClick={logUser}>Login</button>
+              <button onClick={logUser} className="botonLogin">Login</button>
           </div>
         </Form>
       </Container>

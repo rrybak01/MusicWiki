@@ -1,7 +1,7 @@
 import './App.css';
 import Sidebar  from './Components/SideBar/Sidebar';
 import { SidebarData } from './Components/Data/SidebarData';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import uuid from "react-uuid";
 import SearchBar from './Components/SearchBar/SearchBar';
 import CargarPlaylist from "./Components/Elementos/CargarPlaylist";
