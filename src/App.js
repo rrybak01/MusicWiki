@@ -7,7 +7,7 @@ import uuid from "react-uuid";
 function App() {
   return (
       <div className="App">
-        <Router basename='/'>
+        <Router basename='/MusicWiki'>
         <Sidebar />
         <Switch>
           
