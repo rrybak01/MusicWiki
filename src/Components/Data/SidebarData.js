@@ -17,7 +17,7 @@ export const SidebarData = [
     {
     
         link: '/artistas',
-        defaultRoute: false,
+        defaultRoute: true,
         title: 'Artistas',
         component: <Artistas />,
         
@@ -25,7 +25,7 @@ export const SidebarData = [
       {
         
         link: '/canciones',
-        defaultRoute: false,
+        defaultRoute: true,
         title: 'Canciones',
         component: <Canciones />,
         
@@ -33,7 +33,7 @@ export const SidebarData = [
       {
         
         link: '/albums',
-        defaultRoute: false,
+        defaultRoute: true,
         title: 'Albums',
         component: <Albums />
         
@@ -41,7 +41,7 @@ export const SidebarData = [
       {
         
         link: '/buscar',
-        defaultRoute: false,
+        defaultRoute: true,
         title: 'Buscar',
         component: <SearchBar />
         
@@ -49,7 +49,7 @@ export const SidebarData = [
       {
         
         link: '/perfil',
-        defaultRoute: false,
+        defaultRoute: true,
         title: 'Perfil',
         component: <Login />
         
