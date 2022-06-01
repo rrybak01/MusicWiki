@@ -4,8 +4,7 @@ import {SidebarData} from "../Data/SidebarData";
 import { Link } from 'react-router-dom';
 import uuid from "react-uuid";
 
-class Sidebar extends React.Component {
-    render(){
+export default function Sidebar() {
         return (
             <div className="Sidebar">
                 <div className="Sidebar-header">
@@ -17,8 +16,7 @@ class Sidebar extends React.Component {
                     {SidebarData.map((item) => {
                     return(
                         <li key={uuid()}
-                        className="elementosLista"
-                        onClick={()=>{window.location.pathname = item.link}}>
+                        className="elementosLista">
                             <Link
                                 to={item.link}
                                 className="sidebar-link"> 
@@ -32,8 +30,5 @@ class Sidebar extends React.Component {
                 </ul>
             </div>
           );
-    }
-  
 }
 
-export default Sidebar;
