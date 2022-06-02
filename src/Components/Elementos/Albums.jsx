@@ -23,12 +23,19 @@ class Albums extends React.Component {
       
   }
 
+  SoundPlay = (src) => {
+    const sound = new Audio(src);
+
+    sound.play();
+  }
+
   render() {
     return (
       <React.Fragment>
       <div className="contenedor">
         {this.state.tableData.map((item) => (
-          <div className="tarjetatt" key={uuid()}>
+          <div className="tarjetatt" key={uuid()}
+          onClick={() => {this.SoundPlay(item.preview);}}>
             <img src={item.cover_big} alt={item.title} className="imagenTarjeta" />
             <p className="tituloTarjeta">{item.title}</p>
           </div>

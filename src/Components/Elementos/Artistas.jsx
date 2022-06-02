@@ -9,10 +9,8 @@ class Artistas extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedItem: '',
       tableData: [],
     }
-    this.changeSelected = this.changeSelected.bind(this);
   }
 
   async componentDidMount() {
@@ -24,14 +22,6 @@ class Artistas extends React.Component {
     });
       
   }
-
-  changeSelected = async (itemEndpoint) => {
-    const response = await fetch(BASE_API_URL + itemEndpoint);
-    const responseData = await response.json();
-    this.setState({
-      selectedItem: responseData,
-    });
-  };
 
   render() {
     return (
@@ -48,8 +38,6 @@ class Artistas extends React.Component {
             </div>
           );
         })}
-
-        <InfoCard item={this.state.selectedItem}/>
 
       </div>
     );

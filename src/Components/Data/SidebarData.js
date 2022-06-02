@@ -6,27 +6,11 @@ import Login from '../Login/Login';
 import SearchBar from "../SearchBar/SearchBar";
 
 export const SidebarData = [
-    {
-    
-        link: '/',
-        defaultRoute: true,
-        title: 'Inicio',
-        component: <Home />,
-        
-      },
-    {
-    
-        link: '/artistas',
-        defaultRoute: true,
-        title: 'Artistas',
-        component: <Artistas />,
-        
-      },
       {
         
-        link: '/canciones',
+        link: '/inicio',
         defaultRoute: true,
-        title: 'Canciones',
+        title: 'Inicio',
         component: <Canciones />,
         
       },
