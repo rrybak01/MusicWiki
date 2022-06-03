@@ -1,6 +1,4 @@
-import Home from '../Elementos/Home';
-import Artistas from '../Elementos/Artistas';
-import Canciones from '../Elementos/Canciones';
+import Inicio from '../Elementos/Inicio';
 import Albums from '../Elementos/Albums';
 import Login from '../Login/Login';
 import SearchBar from "../SearchBar/SearchBar";
@@ -11,7 +9,7 @@ export const SidebarData = [
         link: '/inicio',
         defaultRoute: true,
         title: 'Inicio',
-        component: <Canciones />,
+        component: <Inicio />,
         
       },
       {

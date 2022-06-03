@@ -1,8 +1,8 @@
 import React from 'react';
 import uuid from 'react-uuid';
-import './Elementos.css';
-import "./Card.css";
+import './Tarjeta.css';
 import {API_URL_ALBUMS} from "../Data/Constants";
+import Player from './Player';
 
 class Albums extends React.Component {
   constructor() {
@@ -23,25 +23,17 @@ class Albums extends React.Component {
       
   }
 
-  SoundPlay = (src) => {
-    const sound = new Audio(src);
-
-    sound.play();
-  }
-
   render() {
     return (
-      <React.Fragment>
       <div className="contenedor">
         {this.state.tableData.map((item) => (
-          <div className="tarjetatt" key={uuid()}
-          onClick={() => {this.SoundPlay(item.preview);}}>
-            <img src={item.cover_big} alt={item.title} className="imagenTarjeta" />
-            <p className="tituloTarjeta">{item.title}</p>
-          </div>
+          <Player 
+            imagen={item.cover_big}
+            text={item.title}
+            key={uuid()}
+          />
         ))}
       </div>
-    </React.Fragment>
     );
   }
 }

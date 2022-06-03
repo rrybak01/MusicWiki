@@ -1,13 +1,10 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import uuid from 'react-uuid';
-import './Elementos.css';
-import { Link } from "react-router-dom";
-import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import './Tarjeta.css';
 
 export default function Home() {
   
   const [data, setData] = useState([]);
-  const [selectedItem, setSelectedItem] = useState("");
   const playlists= "playlists";
   const URL=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/${playlists}`;
   

@@ -1,4 +1,14 @@
-.tarjetatt {
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 94vh;
+    overflow-y: auto;
+    
+}
+
+.tarjetaPlayer{
     width: 250px;
     height: 300px;
     margin: 15px 20px;
@@ -7,24 +17,24 @@
     transition: transform 0.2s ease-out;
 }
 
-.tarjetatt:hover {
+.tarjetaPlayer:hover {
     cursor: pointer;
     transform: translate(5px, -10px);
 }
 
-.tarjetatt .imagenTarjeta {
+.tarjetaPlayer .imagenTarjeta {
     width: 250px;
     height: 250px;
     border-radius: 8px;
     overflow: hidden;
 }
 
-.tarjetatt .imagenTarjeta img {
+.tarjetaPlayer .imagenTarjeta img {
     width: 100%;
     height: auto;
 }
 
-.tarjetatt .tituloTarjeta {
+.tarjetaPlayer .tituloTarjeta {
     color: white;
     font-size: 0.8rem;
     margin: 0;
@@ -34,3 +44,5 @@
     text-overflow: ellipsis;
     font-weight: 700;
 }
+
+
