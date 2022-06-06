@@ -16,7 +16,8 @@ export default function Sidebar() {
                     {SidebarData.map((item) => {
                     return(
                         <li key={uuid()}
-                        className="elementosLista">
+                        className="elementosLista"
+                        onClick={()=>{window.location.pathname = item.link}}>
                             <Link
                                 to={item.link}
                                 className="sidebar-link"

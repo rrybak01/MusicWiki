@@ -1,43 +1,83 @@
-import React, { useRef } from 'react';
-import { Container, Form } from 'react-bootstrap'
-import { useHistory } from "react-router-dom";
-import { Users } from "../Data/Users";
-import "./Login.css";
+import React, { useState } from 'react';
+import './Login.css';
 
-export default function Login(){
-  
-  const history = useHistory();
-  const nameInput = useRef();
-  const pwdInput = useRef();
+function Login() {
 
-  const logUser = () => {
+  const [errorMessages, setErrorMessages] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const user = Users.find(item => item.name === nameInput.current.value && item.password === pwdInput.current.value);
+  const renderErrorMessage = (name) =>
+    name === errorMessages.name && (
+    <div className="error">{errorMessages.message}</div>
+  );
 
-    if (user !== undefined) {
-      localStorage.setItem('loggedUser', user.name);
-      history.push("/perfil/usuario");
+  const handleSubmit = (e) => {
+    
+    e.preventDefault();
+    var { uname, pass } = document.forms[0];
+
+    const userData = database.find((user) => user.username === uname.value);
+    
+    if (userData) {
+      if (userData.password !== pass.value) {
+        setErrorMessages({ name: "pass", message: errors.pass });
+      } else {
+        setIsSubmitted(true);
+      }
+    } else {
+      setErrorMessages({ name: "uname", message: errors.uname });
     }
+  };
+
+  const unlog = (e) => {
+    e.preventDefault();
+    setIsSubmitted(false);
   }
 
-  return (
-    <div className="contenedorLogin">
-      <Container className="login-form">
-        <h1>Inicio de sesión</h1>
-        <Form className="form">
-          <Form.Group className="input-container" controlId="formBasicEmail">
-            <p className='text'>Nombre de usuario</p>
-            <Form.Control className="input" ref={nameInput} type="text" placeholder="Usuario" />
-          </Form.Group>
-          <Form.Group className="input-container" controlId="formBasicPassword">
-            <p className='text'>Contraseña</p>
-            <Form.Control className="input" ref={pwdInput} type="password" placeholder="Contraseña" />
-            </Form.Group>
-          <div className="button-container">
-              <button onClick={logUser} className="botonLogin">Login</button>
-          </div>
-        </Form>
-      </Container>
+  const database = [
+    {
+      username: "admin",
+      password: "admin",
+    },
+
+  ];
+
+  const errors = {
+    uname: "invalid username",
+    pass: "invalid password"
+  };
+
+  const renderForm = (
+    <div className="form">
+      <form onSubmit={handleSubmit}>
+        <div className="title"><h2>Iniciar sesión</h2></div>
+        <div className="input-container">
+          <input type="text" placeholder="Usuario" name="uname" required />
+          {renderErrorMessage("uname")}
+        </div>
+        <div className="input-container">
+          <input type="password" placeholder="Contraseña" name="pass" required />
+          {renderErrorMessage("pass")}
+        </div>
+        <div className="button-container">
+            <button className='loginButton'>Continuar</button>
+        </div>
+      </form>
     </div>
   );
-}
+
+  const loggedInfo = (
+    <div className='form'>
+      <img src="https://pbs.twimg.com/media/FUZ8utHWQAIsHEM.jpg:large" className='imagenPerfil' alt="liverpol"/>
+      <p>Bienvenido!🤙</p>
+      <button onClick={unlog} className='loginButton'>Cerrar sesión</button>
+    </div>
+  );
+
+ return (
+    <div className="login-form">
+      {isSubmitted ? loggedInfo : renderForm}
+    </div>
+  );
+
+};export default Login;

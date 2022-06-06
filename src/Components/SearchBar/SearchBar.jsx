@@ -19,7 +19,7 @@ export default function SearchBar(){
     
     useEffect(() => {
         fetchMyAPI()
-      }, [])
+    }, [])
 
     const updateTable = async () => {
         updateTableAPI('search?q=' + search);
