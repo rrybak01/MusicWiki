@@ -14,7 +14,7 @@ export const SidebarData = [
       {
         
         link: '/buscar',
-        defaultRoute: true,
+        defaultRoute: false,
         title: '🔍 Buscar',
         component: <SearchBar />
         
@@ -22,7 +22,7 @@ export const SidebarData = [
       {
         
         link: '/perfil',
-        defaultRoute: true,
+        defaultRoute: false,
         title: '🙍‍♂️ Perfil',
         component: <Login />
         
