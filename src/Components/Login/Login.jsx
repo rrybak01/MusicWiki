@@ -39,7 +39,6 @@ function Login() {
       username: "admin",
       password: "admin",
     },
-
   ];
 
   const errors = {

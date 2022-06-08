@@ -21,11 +21,11 @@ export default function SearchBar(){
         fetchMyAPI()
     }, [])
 
-    const updateTable = async () => {
-        updateTableAPI('search?q=' + search);
+    const update = async () => {
+        updateAPI('search?q=' + search);
     };
     
-    const updateTableAPI = async (endpointURL) => {
+    const updateAPI = async (endpointURL) => {
         const response = await fetch(BASE_API_URL + endpointURL);
         const responseData = await response.json();
         setData(responseData.data);
@@ -41,7 +41,7 @@ export default function SearchBar(){
                     placeholder="Buscar"
                     onChange={(event) => setSearch(event.target.value)}
                     />
-                    <button type="submit" className="botonBuscar" onClick={updateTable}>
+                    <button type="submit" className="botonBuscar" onClick={update}>
                     <Icon className="search-icon" icon={ic_search} />
                     </button>
                 
@@ -61,5 +61,4 @@ export default function SearchBar(){
                 </div>
             </div>
         )
-    
 }

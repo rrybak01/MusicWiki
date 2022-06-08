@@ -8,7 +8,7 @@ class Inicio extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tableData: [],
+      data: [],
     }
   }
 
@@ -16,8 +16,7 @@ class Inicio extends React.Component {
     const response = await fetch(API_URL_CANCIONES);
     const responseData = await response.json();
     this.setState({
-      tableData: responseData.data,
-      selectedItem: responseData.data[1],
+      data: responseData.data,
     });
       
   }
@@ -25,7 +24,7 @@ class Inicio extends React.Component {
   render() {
     return (
       <div className="contenedor">
-        {this.state.tableData.map((item) => {
+        {this.state.data.map((item) => {
           return (
             <Player
               url={item.preview}
@@ -35,7 +34,6 @@ class Inicio extends React.Component {
             />
           );
         })}
-
       </div>
     );
   }
